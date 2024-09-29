@@ -1,0 +1,146 @@
+### CATEGORIAS
+
+### 1. Listar todas as categorias
+GET http://localhost:8080/api/categoria
+
+###
+
+### 2. Adicionar uma nova categoria
+POST http://localhost:8080/api/categoria
+Content-Type: application/json
+
+{
+    "nome": "Tecnologia",
+    "produtos": []
+}
+
+###
+
+### 3. Atualizar uma categoria existente (exemplo com ID 1)
+PUT http://localhost:8080/api/categoria/1
+Content-Type: application/json
+
+{
+    "nome": "Eletrônicos",
+    "produtos": []
+}
+
+###
+
+### 4. Deletar uma categoria pelo ID (exemplo com ID 1)
+DELETE http://localhost:8080/api/categoria/1
+
+###
+
+### PRODUTOS
+
+### 5. Listar todos os produtos
+GET http://localhost:8080/api/produto
+
+###
+
+### 6. Adicionar um novo produto
+POST http://localhost:8080/api/produto
+Content-Type: application/json
+
+{
+    "nome": "Notebook Gamer",
+    "preco": 5500.00,
+    "descricao": "Notebook potente para jogos",
+    "categoria": {
+        "id": 2
+    }
+}
+
+###
+
+### 7. Buscar um produto por ID (exemplo com ID 1)
+GET http://localhost:8080/api/produto/1
+
+###
+
+### 8. Atualizar um produto existente (exemplo com ID 1)
+PUT http://localhost:8080/api/produto/1
+Content-Type: application/json
+
+{
+    "nome": "Notebook Gamer",
+    "preco": 6000.00,
+    "descricao": "Notebook atualizado para jogos",
+    "categoria": {
+        "id": 1
+    }
+}
+
+###
+
+### 9. Deletar um produto pelo ID (exemplo com ID 1)
+DELETE http://localhost:8080/api/produto/1
+
+###
+
+### 10. Buscar produtos por categoria (exemplo com ID da categoria 1)
+GET http://localhost:8080/api/categoria/1/produto
+
+###
+
+### CLIENTES
+
+### 11. Listar todos os clientes
+GET http://localhost:8080/api/cliente
+
+###
+
+### 12. Adicionar um novo cliente
+POST http://localhost:8080/api/cliente
+Content-Type: application/json
+
+{
+    "nome": "João Silva",
+    "email": "joao.silva@gmail.com",
+    "enderecos": [
+        {
+            "cep": "12345-678",
+            "rua": "Rua das Flores",
+            "numero": "123",
+            "bairro": "Jardim Primavera",
+            "complemento": "Apto 12",
+            "cidade": "São Paulo",
+            "estado": "SP"
+        }
+    ]
+}
+
+###
+
+### 13. Buscar um cliente por ID (exemplo com ID 1)
+GET http://localhost:8080/api/cliente/1
+
+###
+
+### 14. Atualizar um cliente existente (exemplo com ID 1)
+PUT http://localhost:8080/api/cliente/1
+Content-Type: application/json
+
+{
+    "nome": "João Silva",
+    "email": "joao.silva@empresa.com",
+    "enderecos": [
+        {
+            "cep": "12345-678",
+            "rua": "Rua das Flores",
+            "numero": "123",
+            "bairro": "Jardim Primavera",
+            "complemento": "Apto 12",
+            "cidade": "São Paulo",
+            "estado": "SP"
+        }
+    ]
+}
+
+###
+
+### 15. Deletar um cliente pelo ID (exemplo com ID 1)
+DELETE http://localhost:8080/api/cliente/1
+
+###
