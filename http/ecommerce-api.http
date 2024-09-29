@@ -10,7 +10,7 @@ POST http://localhost:8080/api/categoria
 Content-Type: application/json
 
 {
-    "nome": "Tecnologia",
+    "nome": "moda",
     "produtos": []
 }
 
@@ -28,7 +28,7 @@ Content-Type: application/json
 ###
 
 ### 4. Deletar uma categoria pelo ID (exemplo com ID 1)
-DELETE http://localhost:8080/api/categoria/1
+DELETE http://localhost:8080/api/categoria/2
 
 ###
 
@@ -44,11 +44,11 @@ POST http://localhost:8080/api/produto
 Content-Type: application/json
 
 {
-    "nome": "Notebook Gamer",
+    "nome": "celular iphone",
     "preco": 5500.00,
-    "descricao": "Notebook potente para jogos",
+    "descricao": "descriçao teste",
     "categoria": {
-        "id": 2
+        "id": 1
     }
 }
 
@@ -75,12 +75,12 @@ Content-Type: application/json
 ###
 
 ### 9. Deletar um produto pelo ID (exemplo com ID 1)
-DELETE http://localhost:8080/api/produto/1
+DELETE http://localhost:8080/api/produto/2
 
 ###
 
 ### 10. Buscar produtos por categoria (exemplo com ID da categoria 1)
-GET http://localhost:8080/api/categoria/1/produto
+GET http://localhost:8080/api/categoria/1
 
 ###
 
@@ -98,17 +98,9 @@ Content-Type: application/json
 {
     "nome": "João Silva",
     "email": "joao.silva@gmail.com",
-    "enderecos": [
-        {
-            "cep": "12345-678",
-            "rua": "Rua das Flores",
-            "numero": "123",
-            "bairro": "Jardim Primavera",
-            "complemento": "Apto 12",
-            "cidade": "São Paulo",
-            "estado": "SP"
-        }
-    ]
+    "enderecos": {
+        "id": 1
+    }
 }
 
 ###
@@ -125,17 +117,9 @@ Content-Type: application/json
 {
     "nome": "João Silva",
     "email": "joao.silva@empresa.com",
-    "enderecos": [
-        {
-            "cep": "12345-678",
-            "rua": "Rua das Flores",
-            "numero": "123",
-            "bairro": "Jardim Primavera",
-            "complemento": "Apto 12",
-            "cidade": "São Paulo",
-            "estado": "SP"
-        }
-    ]
+    "enderecos": {
+        "id": 1
+    }
 }
 
 ###
@@ -144,3 +128,39 @@ Content-Type: application/json
 DELETE http://localhost:8080/api/cliente/1
 
 ###
+
+### 16. Listar todos os endereços
+GET http://localhost:8080/api/endereco
+### 17. Adicionar um novo endereço
+POST http://localhost:8080/api/endereco
+Content-Type: application/json
+
+{
+    "cep": "12345-678",
+    "rua": "Rua das Flores",
+    "numero": "123",
+    "bairro": "Jardim Primavera",
+    "complemento": "Apto 12",
+    "cidade": "São Paulo",
+    "estado": "SP"
+}
+
+### 18. Atualizar um endereço existente (exemplo com ID 1)
+PUT http://localhost:8080/api/endereco/1
+Content-Type: application/json
+
+{
+    "cep": "12345-678",
+    "rua": "Rua das Flores",
+    "numero": "123",
+    "bairro": "Jardim Primavera",
+    "complemento": "Apto 12",
+    "cidade": "São Paulo",
+    "estado": "SP"
+}
+
+### 19. Buscar um endereço por ID (exemplo com ID 1)
+GET http://localhost:8080/api/endereco/1
+
+### 20. Deletar um endereço pelo ID (exemplo com ID 1)
+DELETE http://localhost:8080/api/endereco/1
